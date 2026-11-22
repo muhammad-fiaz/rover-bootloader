@@ -19,7 +19,7 @@
 
 </div>
 
-`rover-bootloader` is an independent, modular, high-assurance UEFI bootloader implemented natively in `#![no_std]` Rust. Designed as a standalone bootloader, it leverages `rover-uefi` as its authoritative firmware interface library to discover system resources, configure display adapters, parse kernel executables, terminate firmware boot services safely, and transfer execution across multiple processor architectures.
+`rover-bootloader` is a modern, modular, and high-assurance UEFI bootloader built in Rust. It provides reliable firmware resource discovery, display configuration, kernel image loading, safe boot services termination, and clean execution handoff across modern processor architectures.
 
 > [!TIP]
 > If you build with `rover-bootloader`, make sure give it a star ⭐ on Github!
@@ -31,7 +31,7 @@
 
 | Feature Category | Description |
 |---|---|
-| **Zero-Dependency Core** | Pure `#![no_std]` Rust implementation depending exclusively on `rover-uefi`. Zero external third-party crates, ensuring maximum supply-chain security and predictable firmware behavior. |
+| **Zero-Dependency Core** | Implemented natively in Rust with zero external third-party dependencies, ensuring maximum supply-chain security and predictable firmware behavior. |
 | **Safe ExitBootServices** | Iterative `GetMemoryMap` and `ExitBootServices` transition loop adhering to Section 7.2 of the UEFI Specification. Automatically retries upon firmware memory allocation events. |
 | **Defensive Binary Parsing** | Native zero-allocation ELF64, ELF32, and PE32+ parsers with strict bounds checking, machine architecture verification (`EM_X86_64`, `EM_AARCH64`, `EM_RISCV`), and BSS zero-filling (`p_memsz > p_filesz`). |
 | **Rover Boot Protocol v1** | Standardized, 64-bit aligned handoff structure passing normalized/coalesced physical memory maps, linear framebuffer metadata, ACPI 2.0/1.0 RSDP, SMBIOS 3.x/2.x entry points, ramdisk modules, command lines, and architecture IDs. |
@@ -291,7 +291,7 @@ rover-bootloader/
 
 ## Contributing
 
-Contributions are welcome! Please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) guide for details on our development workflow, coding conventions, `#![no_std]` constraints, and pull request process.
+Contributions are welcome! Please refer to the [CONTRIBUTING.md](https://github.com/muhammad-fiaz/rover-bootloader/blob/main/CONTRIBUTING.md) guide for details on our development workflow, coding standards, and pull request process.
 
 ---
 
