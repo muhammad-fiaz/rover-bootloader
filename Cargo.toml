@@ -1,0 +1,33 @@
+[package]
+name = "rover-bootloader"
+version = "0.1.0"
+edition = "2024"
+authors = ["Muhammad Fiaz <contact@muhammadfiaz.com>"]
+description = "A modern, modular, high-assurance UEFI bootloader in native Rust"
+readme = "README.md"
+license = "Apache-2.0"
+repository = "https://github.com/muhammad-fiaz/rover-bootloader"
+homepage = "https://github.com/muhammad-fiaz/rover-bootloader#readme"
+
+[lib]
+name = "rover_bootloader"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rover-bootloader"
+path = "src/main.rs"
+
+[dependencies]
+rover-uefi = { path = "../crates/uefi" }
+
+[lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
+unused_must_use = "deny"
+missing_docs = "deny"
+
+[lints.clippy]
+all = { level = "deny", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+unwrap_used = "deny"
+expect_used = "deny"
+manual_is_multiple_of = "allow"

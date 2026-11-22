@@ -1,0 +1,81 @@
+name: 'Documentation Improvement'
+description: 'Report missing, incorrect, or unclear documentation in rover-bootloader'
+title: '[Docs]: '
+labels: ['documentation']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Accurate, high-quality documentation is critical for firmware development. Thank you for reporting!
+
+  - type: textarea
+    id: location
+    attributes:
+      label: Documentation Page or Source Location
+      description: Where is the documentation issue located?
+      placeholder: e.g. README.md, docs.rs, or rustdoc comments on `src/protocols/firmware/pei.rs`
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: Description of the Problem
+      description: What is inaccurate, misleading, missing, or unclear?
+      placeholder: Explain what needs improvement...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: Current importance level assigned to this documentation issue.
+      options:
+        - 'P1 - High (Inaccurate safety guidance, incorrect ABI documentation)'
+        - 'P2 - Medium (Missing protocol documentation, broken example)'
+        - 'P3 - Low (Typo, formatting fix, cosmetic improvement)'
+      default: 1
+    validations:
+      required: true
+
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Estimated Effort
+      description: Relative level of effort for completing this documentation task.
+      options:
+        - 'XS - Trivial (< 1 hour)'
+        - 'S - Small (1-2 hours)'
+        - 'M - Medium (half day)'
+      default: 0
+    validations:
+      required: false
+
+  - type: input
+    id: rust_and_crate_version
+    attributes:
+      label: rover-bootloader & Rust Version
+      description: What crate version and rustc version did you view the documentation on?
+      placeholder: e.g. rover-bootloader v0.1.0, rustc 1.85.0
+    validations:
+      required: false
+
+  - type: textarea
+    id: suggested_fix
+    attributes:
+      label: Suggested Improvement
+      description: How should the documentation be updated?
+      placeholder: Provide suggested text, examples, or code snippets...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Contribution
+      options:
+        - label: I would be willing to submit a pull request with this documentation update.
+          required: false
+        - label: I agree to follow this project's [Code of Conduct](https://github.com/muhammad-fiaz/rover-bootloader/blob/main/CODE_OF_CONDUCT.md).
+          required: true
