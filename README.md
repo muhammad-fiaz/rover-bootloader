@@ -154,35 +154,6 @@ cargo test --all-features
 
 ---
 
-## QEMU Validation
-
-To validate `rover-bootloader.efi` under QEMU with OVMF firmware:
-
-1. Prepare an EFI System Partition (ESP) directory:
-   ```text
-   esp/
-   ├── EFI/
-   │   └── BOOT/
-   │       └── BOOTX64.EFI   # (copy of rover-bootloader.efi)
-   ├── rover.cfg
-   └── kernel.elf
-   ```
-
-2. Execute QEMU:
-   ```bash
-   qemu-system-x86_64 \
-       -machine q35 \
-       -m 512M \
-       -cpu qemu64 \
-       -drive if=pflash,format=raw,readonly=on,file=path/to/OVMF_CODE.fd \
-       -drive if=pflash,format=raw,file=path/to/OVMF_VARS.fd \
-       -drive format=raw,file=fat:rw:esp \
-       -serial stdio \
-       -net none
-   ```
-
----
-
 <details>
 <summary><strong>Validation Matrix</strong> (click to expand)</summary>
 

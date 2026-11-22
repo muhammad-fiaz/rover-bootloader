@@ -12,3 +12,4 @@ dependencies = [
 [[package]]
 name = "rover-uefi"
 version = "0.1.0"
+source = "git+https://github.com/muhammad-fiaz/rover-uefi.git#f668ce26a40895a2e3da7f7846daf30267e56f64"

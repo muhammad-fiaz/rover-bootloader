@@ -18,7 +18,7 @@ name = "rover-bootloader"
 path = "src/main.rs"
 
 [dependencies]
-rover-uefi = { path = "../crates/uefi" }
+rover-uefi = { git = "https://github.com/muhammad-fiaz/rover-uefi.git" }
 
 [lints.rust]
 unsafe_op_in_unsafe_fn = "deny"
